@@ -12,11 +12,13 @@ app.set('PORT', config.webPort);
 
 var port = process.env.PORT || app.get('PORT');
 
-app.all('*', function (request, response, next) {
+app.all('*', function(request, response, next) {
     console.log(request.method + " " + request.url);
-    response.send('No version selected');
     next();
-});
+})
+
+app.use('/api/v1', require('./routes/route_api_v1'));
+app.use('/api/v2', require('./routes/route_api_v2'));
 
 app.listen(port, function() {
 
