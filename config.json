@@ -1,0 +1,7 @@
+{
+  "secretkey": "12345",
+  "dbUsername": "database_name",
+  "dbSchema": "database_schema",
+  "dbServer": "localhost",
+  "webPort": "8080"
+}
